@@ -3,8 +3,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(express.static("public"));
 // app.use(bodyParser.urlencoded({ extended: false }));
-
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res) {
@@ -36,7 +36,8 @@ app.get("/", function(req, res) {
             day = "Sunday"
             break;
     }
-    res.send("<h1>Today is " + day + "</h1>")
+
+    res.render("list", { day: day });
 });
 
 
