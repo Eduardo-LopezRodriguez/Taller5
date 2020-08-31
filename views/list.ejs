@@ -8,38 +8,32 @@
     <meta name="author" content="Arrocito82 Andrea Melissa Monterrosa Morales ">
 
     <title>ToDo List</title>
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="box">
-        <h1 id="heading">
+    <div class="box" id="heading">
+        <h1>
             <%= weekDay %>
         </h1>
-
-        <ul>
-            <% listOfItems.forEach(element => { %>
-                <li>
-                    <%= element %>
-                </li>
-                <% }); %>
-
-        </ul>
-        <div class="item">
-            <form action="/" method="POST">
-                <input type="text" name="newItem" placeholder="Add new item">
-                <button type="submit">+</button>
-            </form>
-        </div>
-
     </div>
-
+    <div class="box">
+        <% listOfItems.forEach(element => { %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= element %>
+                </p>
+            </div>
+            <% }); %>
+                <form action="/" method="POST" class="item">
+                    <input type="text" name="newItem" placeholder="Add new item" autocomplete="off">
+                    <button type="submit">+</button>
+                </form>
+    </div>
 
 
 

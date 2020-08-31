@@ -1,13 +1,14 @@
 html {
-    background-color: #E4E9FD;
-    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    background-color: #d4f3ef;
+    background-image: -webkit-linear-gradient(70deg, #abf0e9 50%, #d4f3ef 50%);
     min-height: 1000px;
-    font-family: 'helvetica neue';
+    font-family: sans-serif;
+    letter-spacing: 0.1rem;
 }
 
 h1 {
     color: #fff;
-    padding: 10px;
+    padding: 1rem;
 }
 
 .box {
@@ -19,8 +20,11 @@ h1 {
 }
 
 #heading {
-    background-color: #A683E3;
+    background-color: #abf0e9;
     text-align: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    font-family: 'Alata', sans-serif;
 }
 
 .item {
@@ -36,7 +40,12 @@ h1 {
 
 input:checked+p {
     text-decoration: line-through;
-    text-decoration-color: #A683E3;
+    lighting-color: #63b7af;
+    text-decoration-color: #63b7af;
+}
+
+input:checked {
+    background-color: #63b7af;
 }
 
 input[type="checkbox"] {
@@ -49,6 +58,7 @@ p {
     font-size: 20px;
     font-weight: 200;
     color: #00204a;
+    text-transform: capitalize;
 }
 
 form {
@@ -61,10 +71,10 @@ button {
     width: 50px;
     border-radius: 50%;
     border-color: transparent;
-    background-color: #A683E3;
+    background-color: #abf0e9;
     color: #fff;
-    font-size: 30px;
-    padding-bottom: 6px;
+    font-size: 2.5rem;
+    padding-bottom: 3px;
     border-width: 0;
 }
 
