@@ -4,17 +4,32 @@ html {
     min-height: 1000px;
     font-family: sans-serif;
     letter-spacing: 0.1rem;
+    position: relative;
 }
 
-h1 {
+h1,
+.h1,
+.h3 {
     color: #fff;
     padding: 1rem;
 }
 
+h5 {
+    color: #fff;
+}
+
+.container {
+    width: 50%;
+}
+
+body {
+    background-color: transparent;
+}
+
 .box {
+    background: white;
     max-width: 400px;
     margin: 50px auto;
-    background: white;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
@@ -73,7 +88,7 @@ button {
     border-color: transparent;
     background-color: #abf0e9;
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     padding-bottom: 3px;
     border-width: 0;
 }
@@ -99,8 +114,11 @@ input[type="text"]:focus {
     opacity: 1;
 }
 
-footer {
-    color: white;
-    color: rgba(0, 0, 0, 0.5);
+footer div {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     text-align: center;
+    padding-bottom: 1rem;
 }

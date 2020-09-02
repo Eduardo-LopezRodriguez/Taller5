@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 let items = [];
+let workItems = [];
 
 
 app.use(express.static("public"));
@@ -21,14 +22,36 @@ app.get("/", function(req, res) {
     };
     date = today.toLocaleDateString("en-US", options);
 
-    res.render("list", { weekDay: date, listOfItems: items });
+    res.render("list", { listTitle: date, listOfItems: items });
 });
 
 app.post("/", function(request, response) {
     let newItem = request.body.newItem;
-    items.push(newItem);
-    response.redirect("/");
+
+    if (request.body.listTitle == "work") {
+        workItems.push(newItem); //guardando el new item en el array workItems
+        //despues de guardar los datos podriamos decir que la pagina se recarga
+        response.redirect("/work");
+    } else {
+
+        items.push(newItem);
+        response.redirect("/");
+    }
+
 });
+
+
+//este es como decir el metodo para cargar la pagina
+app.get('/work', function(request, response) {
+    let title = 'work';
+    response.render("list", { listTitle: title, listOfItems: workItems });
+});
+
+app.get("/about", function(req, res) {
+    res.render('about');
+});
+
+
 app.listen(3000, function() {
     console.log("Everything ok");
 });

@@ -1,23 +1,7 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="this is an static page, a project for learning web development">
-    <meta name="author" content="Arrocito82 Andrea Melissa Monterrosa Morales ">
-
-    <title>ToDo List</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="css/styles.css" rel="stylesheet">
-</head>
-
-<body>
-
+<%- include('header'); -%>
     <div class="box" id="heading">
         <h1>
-            <%= weekDay %>
+            <%= listTitle %>
         </h1>
     </div>
     <div class="box">
@@ -31,12 +15,7 @@
             <% }); %>
                 <form action="/" method="POST" class="item">
                     <input type="text" name="newItem" placeholder="Add new item" autocomplete="off">
-                    <button type="submit">+</button>
+                    <button type="submit" name="listTitle" value=<%=listTitle %> >+</button>
                 </form>
     </div>
-
-
-
-</body>
-
-</html>
+    <%- include('footer'); -%>
