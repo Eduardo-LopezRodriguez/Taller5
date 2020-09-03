@@ -22,7 +22,7 @@ app.set("view engine", "ejs");
 //every time something is display on screen is because
 //it was sent to it so that we 
 app.get("/", function(req, res) {
-    res.render("list", { listTitle: date(), listOfItems: items });
+    res.render("list", { listTitle: date.SpanishDay(), listOfItems: items });
 });
 
 app.post("/", function(request, response) {
