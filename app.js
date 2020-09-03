@@ -2,6 +2,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const date = require(__dirname + "/date.js");
+/*aqui estamos requiriendo el modulo dentro del archivo date.js y como no es algo que deba enviarse
+al browser para funcionar, si que es parte del proceso en el backend, entonces puede perfectamente 
+estar en el root
+
+La forma de usarlo es como se muestra abajo con el comando date(), ya que solo existe un modulo
+pero si fuera mas de uno variaria como se observara en el siguiente branch
+*/
 let items = [];
 let workItems = [];
 
@@ -14,15 +22,7 @@ app.set("view engine", "ejs");
 //every time something is display on screen is because
 //it was sent to it so that we 
 app.get("/", function(req, res) {
-    let today = new Date();
-    let options = {
-        weekday: "long",
-        day: 'numeric',
-        month: 'long',
-    };
-    date = today.toLocaleDateString("en-US", options);
-
-    res.render("list", { listTitle: date, listOfItems: items });
+    res.render("list", { listTitle: date(), listOfItems: items });
 });
 
 app.post("/", function(request, response) {
